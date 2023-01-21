@@ -136,7 +136,7 @@ try:
     position = (sum([pawn[i] for i in board.pieces(chess.PAWN, chess.WHITE)]) + sum([-pawn[chess.square_mirror(i)] for i in board.pieces(chess.PAWN, chess.BLACK)]) + sum([knight[i] for i in board.pieces(chess.KNIGHT, chess.WHITE)]) + sum([-knight[chess.square_mirror(i)] for i in board.pieces(chess.KNIGHT, chess.BLACK)]) + sum([bishop[i] for i in board.pieces(chess.BISHOP, chess.WHITE)]) + sum([-bishop[chess.square_mirror(i)] for i in board.pieces(chess.BISHOP, chess.BLACK)]) + sum([rook[i] for i in board.pieces(chess.ROOK, chess.WHITE)]) + sum([-rook[chess.square_mirror(i)] for i in board.pieces(chess.ROOK, chess.BLACK)]) + sum([queen[i] for i in board.pieces(chess.QUEEN, chess.WHITE)]) + sum([-queen[chess.square_mirror(i)] for i in board.pieces(chess.QUEEN, chess.BLACK)]) + sum([king[i] for i in board.pieces(chess.KING, chess.WHITE)]) + sum([-king[chess.square_mirror(i)] for i in board.pieces(chess.KING, chess.BLACK)]))
 
     # Board evaluation by material and position
-    evaluation = material + position
+    evaluation = 3 * material + position
     if board.turn:
       # White
       return evaluation
